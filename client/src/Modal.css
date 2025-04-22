@@ -1,0 +1,56 @@
+/* Modal Overlay Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* Modal Content Styles */
+.modal-content {
+  background: var(--card-bg);
+  color: var(--text-color);
+  padding: 30px;
+  border-radius: var(--border-radius, 8px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  animation: slideDown 0.3s ease-out;
+  max-width: 500px;
+  width: 90%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Slide Down Animation */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Consistent spacing for modal action buttons (Submit, Confirm, Verify) */
+.modal-content > .btn.primary,
+.modal-content > .btn.secondary.submit-action {
+  display: block;
+  width: 100%;
+  margin: 20px 0 0;
+}
+
+/* Center Close Button at bottom */
+.modal-content > .btn.secondary:not(.submit-action) {
+  display: block;
+  width: auto;
+  max-width: 200px;
+  margin: 30px auto 0;
+}
